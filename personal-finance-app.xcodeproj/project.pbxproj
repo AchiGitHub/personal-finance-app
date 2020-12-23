@@ -103,8 +103,9 @@
 			children = (
 				29F66398259362B8008C48AA /* AppDelegate.swift */,
 				29F6639A259362B8008C48AA /* SceneDelegate.swift */,
-				29F6639C259362B8008C48AA /* ViewController.swift */,
-				29F6639E259362B8008C48AA /* Main.storyboard */,
+				29F663CE2593B7F6008C48AA /* Model */,
+				29F663CF2593B80E008C48AA /* View */,
+				29F663D02593B816008C48AA /* Controller */,
 				29F663A4259362B9008C48AA /* Assets.xcassets */,
 				29F663A6259362B9008C48AA /* LaunchScreen.storyboard */,
 				29F663A9259362B9008C48AA /* Info.plist */,
@@ -129,6 +130,29 @@
 				29F663BF259362B9008C48AA /* Info.plist */,
 			);
 			path = "personal-finance-appUITests";
+			sourceTree = "<group>";
+		};
+		29F663CE2593B7F6008C48AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		29F663CF2593B80E008C48AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29F6639E259362B8008C48AA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29F663D02593B816008C48AA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				29F6639C259362B8008C48AA /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2928941025973BE70094A267 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928940F25973BE70094A267 /* NewAccountViewController.swift */; };
+		296F549325A35C8400D3529D /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */; };
 		29A3D0FF259B61DE006C13E5 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A3D0FE259B61DE006C13E5 /* DashboardViewController.swift */; };
 		29F66399259362B8008C48AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F66398259362B8008C48AA /* AppDelegate.swift */; };
 		29F6639B259362B8008C48AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6639A259362B8008C48AA /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		2928940F25973BE70094A267 /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewAccountViewController.swift; path = "personal-finance-app/Controller/NewAccountViewController.swift"; sourceTree = SOURCE_ROOT; };
+		296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		29A3D0FE259B61DE006C13E5 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = "personal-finance-app/Controller/DashboardViewController.swift"; sourceTree = SOURCE_ROOT; };
 		29F66395259362B8008C48AA /* personal-finance-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "personal-finance-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F66398259362B8008C48AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				29F6639E259362B8008C48AA /* Main.storyboard */,
-				29A3D0FE259B61DE006C13E5 /* DashboardViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +164,8 @@
 		29F663D02593B816008C48AA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				29A3D0FE259B61DE006C13E5 /* DashboardViewController.swift */,
+				296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */,
 				2928940F25973BE70094A267 /* NewAccountViewController.swift */,
 				29F6639C259362B8008C48AA /* ViewController.swift */,
 			);
@@ -304,6 +307,7 @@
 				29F6639D259362B8008C48AA /* ViewController.swift in Sources */,
 				29F66399259362B8008C48AA /* AppDelegate.swift in Sources */,
 				2928941025973BE70094A267 /* NewAccountViewController.swift in Sources */,
+				296F549325A35C8400D3529D /* AccountCollectionViewCell.swift in Sources */,
 				29F6639B259362B8008C48AA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -45,9 +45,9 @@ class DashboardViewController: UIViewController {
         
         do {
             accountsArray = try managedContext.fetch(request)
-            for account in accountsArray {
-                print(account.account_name)
-            }
+//            for account in accountsArray {
+//                print(account.account_name)
+//            }
         } catch let error as NSError {
             print("\(error)")
         }

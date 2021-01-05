@@ -49,8 +49,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdP-Ce-EBO">
                                                 <rect key="frame" x="0.0" y="300" width="414" height="200"/>
                                                 <subviews>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wlk-LU-d1r">
-                                                        <rect key="frame" x="8" y="8" width="398" height="184"/>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wlk-LU-d1r">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="YER-XS-pvP">
                                                             <size key="itemSize" width="171" height="170"/>
@@ -61,7 +61,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AccountCell" id="7fq-SU-219" customClass="AccountCollectionViewCell" customModule="personal_finance_app" customModuleProvider="target">
-                                                                <rect key="frame" x="104" y="10" width="190" height="170"/>
+                                                                <rect key="frame" x="10" y="10" width="190" height="170"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Sut-8m-sjC" customClass="AccountCollectionViewCell" customModule="personal_finance_app" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="190" height="170"/>
@@ -118,11 +118,15 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Wlk-LU-d1r" secondAttribute="bottom" id="58S-23-Ai1"/>
                                                     <constraint firstAttribute="height" constant="200" id="6I3-2i-u5Z"/>
                                                     <constraint firstAttribute="trailing" secondItem="Wlk-LU-d1r" secondAttribute="trailing" id="FJW-TM-CCW"/>
                                                     <constraint firstItem="Wlk-LU-d1r" firstAttribute="top" secondItem="hdP-Ce-EBO" secondAttribute="top" id="ODs-yD-JnL"/>
+                                                    <constraint firstItem="Wlk-LU-d1r" firstAttribute="leading" secondItem="hdP-Ce-EBO" secondAttribute="leading" id="bLY-Wm-VND"/>
                                                     <constraint firstItem="Wlk-LU-d1r" firstAttribute="leading" secondItem="hdP-Ce-EBO" secondAttribute="leading" id="eOc-Kr-zde"/>
                                                     <constraint firstAttribute="bottom" secondItem="Wlk-LU-d1r" secondAttribute="bottom" id="h9q-98-J5c"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wlk-LU-d1r" secondAttribute="trailing" id="ksd-hZ-PYB"/>
+                                                    <constraint firstItem="Wlk-LU-d1r" firstAttribute="top" secondItem="hdP-Ce-EBO" secondAttribute="top" id="nyc-vS-euj"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5d-75-5CI">

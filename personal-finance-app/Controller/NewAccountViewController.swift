@@ -15,6 +15,8 @@ class NewAccountViewController: UIViewController {
     @IBOutlet weak var accountNumber: UITextField!
     @IBOutlet weak var initialAmount: UITextField!
     @IBOutlet weak var creditLimit: UITextField!
+    @IBOutlet weak var bankAccountNumberLbl: UILabel!
+    @IBOutlet weak var creditLimitLbl: UILabel!
     
     var selectedAccountType: String = ""
     
@@ -26,6 +28,10 @@ class NewAccountViewController: UIViewController {
         // Do any additional setup after loading the view.
         accountType.dataSource = self;
         accountType.delegate = self;
+        accountNumber.isHidden = true;
+        creditLimit.isHidden = true;
+        bankAccountNumberLbl.isHidden = true;
+        creditLimitLbl.isHidden = true;
         
         pickerData = ["Cash", "Savings Account", "Credit Card Account", "Current Account"]
     }
@@ -50,6 +56,18 @@ extension NewAccountViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectedValue = pickerData[row] as String
+        
+        if(selectedValue == "Cash"){
+            accountNumber.isHidden = true;
+            creditLimit.isHidden = true;
+            bankAccountNumberLbl.isHidden = true;
+            creditLimitLbl.isHidden = true;
+        } else {
+            accountNumber.isHidden = false;
+            creditLimit.isHidden = false;
+            bankAccountNumberLbl.isHidden = false;
+            creditLimitLbl.isHidden = false;
+        }
         selectedAccountType = selectedValue
     }
 }

@@ -386,7 +386,9 @@
                         <outlet property="accountName" destination="7o5-nM-vWF" id="JJ1-NW-tMd"/>
                         <outlet property="accountNumber" destination="R2L-P6-11e" id="jGo-Xl-eFT"/>
                         <outlet property="accountType" destination="tLK-rf-XzK" id="xjQ-bc-IUI"/>
+                        <outlet property="bankAccountNumberLbl" destination="XYk-YE-KEs" id="sAL-T9-Exe"/>
                         <outlet property="creditLimit" destination="pnN-ts-DXH" id="Chl-1t-Las"/>
+                        <outlet property="creditLimitLbl" destination="fE7-Nt-gku" id="hoV-43-r9h"/>
                         <outlet property="initialAmount" destination="DJG-PA-ptC" id="ARq-Gv-yi1"/>
                     </connections>
                 </viewController>

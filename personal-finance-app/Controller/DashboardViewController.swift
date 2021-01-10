@@ -11,7 +11,12 @@ import CoreData
 class DashboardViewController: UIViewController {
 
     var accountsArray = [Account]();
+    var totalBalance: Double = 0.0
+    
     @IBOutlet weak var AccountsCollectionView: UICollectionView!
+    @IBOutlet weak var balanceLbl: UILabel!
+    @IBOutlet weak var totalBalanceLbl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +50,10 @@ class DashboardViewController: UIViewController {
         
         do {
             accountsArray = try managedContext.fetch(request)
-//            for account in accountsArray {
-//                print(account.account_name)
-//            }
+            for account in accountsArray {
+                totalBalance += account.initial_amount
+            }
+            totalBalanceLbl.text = String(totalBalance)
         } catch let error as NSError {
             print("\(error)")
         }

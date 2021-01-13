@@ -43,6 +43,30 @@ class NewAccountViewController: UIViewController {
         let credit_limit = Double(creditLimit.text!) ?? 0.0
         let accountDetails = AccountDetails(accountName: account_name, accountType: selectedAccountType, bankAccountNumber: bank_account_number, initialAmount: initial_amount, creditLimit: credit_limit)
         save(accountDetails: accountDetails)
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+func save(accountDetails: AccountDetails){
+    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+        return
+    }
+    
+    let managedContext = appDelegate.persistentContainer.viewContext
+    
+    let newAccount = Account(context: managedContext)
+    newAccount.account_name = accountDetails.accountName
+    newAccount.account_type = accountDetails.accountType
+    newAccount.initial_amount = accountDetails.initialAmount
+    newAccount.bank_account_number = accountDetails.bankAccountNumber
+    newAccount.credit_limit = accountDetails.creditLimit!
+    newAccount.current_amount = accountDetails.initialAmount
+    
+    do {
+        try managedContext.save()
+        print("details saved successfully")
+    } catch let error as NSError {
+        print("Could not Save \(error), \(error.userInfo)")
     }
 }
 
@@ -76,29 +100,6 @@ extension NewAccountViewController: UIPickerViewDataSource {
 extension NewAccountViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
-    }
-}
-
-func save(accountDetails: AccountDetails){
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-        return
-    }
-    
-    let managedContext = appDelegate.persistentContainer.viewContext
-    
-    let newAccount = Account(context: managedContext)
-    newAccount.account_name = accountDetails.accountName
-    newAccount.account_type = accountDetails.accountType
-    newAccount.initial_amount = accountDetails.initialAmount
-    newAccount.bank_account_number = accountDetails.bankAccountNumber
-    newAccount.credit_limit = accountDetails.creditLimit!
-    newAccount.current_amount = accountDetails.initialAmount
-    
-    do {
-        try managedContext.save()
-        print("details saved successfully")
-    } catch let error as NSError {
-        print("Could not Save \(error), \(error.userInfo)")
     }
 }
 

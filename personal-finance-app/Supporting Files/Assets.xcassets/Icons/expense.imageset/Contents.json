@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "expense.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Graphics-Check-big@2x.png",
+      "filename" : "expense-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "expense-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

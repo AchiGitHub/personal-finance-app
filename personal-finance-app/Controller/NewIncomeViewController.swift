@@ -32,7 +32,7 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
         accountName.delegate = self;
         pickerData.removeAll()
         loadAccounts()
-     //   loadIncome() // testing
+//        loadIncome() // testing
         
     }
     
@@ -93,6 +93,9 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
             var incomeArray = [Income]();
             incomeArray = try managedContext.fetch(request)
             
+            for income in incomeArray {
+                print(income.account_name)
+            }
             
         } catch let error as NSError {
             print("\(error)")
@@ -100,18 +103,15 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
        
     }
     
-    
-    @IBAction func addIncome(_ sender: Any) {
-       // let account_name = selectedAccountName
-        let title = incomeTitle.text ?? ""
-        let noteText = note.text ?? ""
-        let amountValue = Double(amount.text!) ?? 0.0
-        
-        
-        save(title: title, date: selectedDate, note: noteText, amount: amountValue, accountName: selectedAccountName)
+    @IBAction func saveIncome(_ sender: Any) {
+        // let account_name = selectedAccountName
+         let title = incomeTitle.text ?? ""
+         let noteText = note.text ?? ""
+         let amountValue = Double(amount.text!) ?? 0.0
+         
+         save(title: title, date: selectedDate, note: noteText, amount: amountValue, accountName: selectedAccountName)
 
-        tabBarController?.selectedIndex = 0
-        
+         tabBarController?.selectedIndex = 0
     }
     
     @IBAction func dateChange(_ sender: UIDatePicker) {
@@ -119,6 +119,7 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
     }
     
     func save(title: String , date : Date , note : String , amount : Double , accountName :String){
+        print("rwerwerw \(title)")
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }

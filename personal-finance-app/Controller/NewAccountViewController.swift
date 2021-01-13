@@ -35,7 +35,8 @@ class NewAccountViewController: UIViewController {
         
         pickerData = ["Cash", "Savings Account", "Credit Card Account", "Current Account"]
     }
-    @IBAction func addNewAccount(_ sender: Any) {
+    
+    @IBAction func saveAccount(_ sender: Any) {
         let account_name = accountName.text ?? "Name"
         let bank_account_number = accountNumber.text ?? "000"
         let initial_amount = Double(initialAmount.text!) ?? 0.0
@@ -91,6 +92,7 @@ func save(accountDetails: AccountDetails){
     newAccount.initial_amount = accountDetails.initialAmount
     newAccount.bank_account_number = accountDetails.bankAccountNumber
     newAccount.credit_limit = accountDetails.creditLimit!
+    newAccount.current_amount = accountDetails.initialAmount
     
     do {
         try managedContext.save()

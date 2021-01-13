@@ -51,7 +51,7 @@ class DashboardViewController: UIViewController {
         do {
             accountsArray = try managedContext.fetch(request)
             for account in accountsArray {
-                totalBalance += account.initial_amount
+                totalBalance += account.current_amount
             }
             totalBalanceLbl.text = String(totalBalance)
         } catch let error as NSError {
@@ -85,7 +85,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell = AccountsCollectionView.dequeueReusableCell(withReuseIdentifier: "AccountCell", for: indexPath) as! AccountCollectionViewCell
         cell.accountName.text = accountsArray[indexPath.row].account_name
         cell.accountType.text = accountsArray[indexPath.row].account_type
-        cell.amount.text = String(accountsArray[indexPath.row].initial_amount)
+        cell.initialAmount.text = String(accountsArray[indexPath.row].initial_amount)
+        cell.amount.text = String(accountsArray[indexPath.row].current_amount)
         return cell
     }
     

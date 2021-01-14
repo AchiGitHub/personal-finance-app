@@ -21,7 +21,6 @@ class SuccessViewController: UIViewController {
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
 
     /*
     // MARK: - Navigation
@@ -33,6 +32,7 @@ class SuccessViewController: UIViewController {
     }
     */
     @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
         navigationController?.popToRootViewController(animated: true)
         navigationController?.popViewController(animated: true)
     }

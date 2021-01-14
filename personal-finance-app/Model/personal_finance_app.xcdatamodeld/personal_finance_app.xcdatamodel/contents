@@ -14,6 +14,12 @@
         <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Debt" representedClassName="Debt" syncable="YES" codeGenerationType="class">
+        <attribute name="burrow_amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="burrow_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="burrow_description" optional="YES" attributeType="String"/>
+        <attribute name="burrowed_from" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Income" representedClassName="Income" syncable="YES" codeGenerationType="class">
         <attribute name="account_name" optional="YES" attributeType="String"/>
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -23,7 +29,8 @@
     </entity>
     <elements>
         <element name="Account" positionX="-63" positionY="-18" width="128" height="119"/>
-        <element name="Income" positionX="-63" positionY="9" width="128" height="118"/>
         <element name="Budget" positionX="-63" positionY="36" width="128" height="89"/>
+        <element name="Income" positionX="-63" positionY="9" width="128" height="118"/>
+        <element name="Debt" positionX="-63" positionY="36" width="128" height="89"/>
     </elements>
 </model>

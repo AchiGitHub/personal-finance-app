@@ -110,7 +110,8 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
          
          save(title: title, date: selectedDate, note: noteText, amount: amountValue, accountName: selectedAccountName)
 
-         tabBarController?.selectedIndex = 0
+        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func dateChange(_ sender: UIDatePicker) {

@@ -92,7 +92,8 @@ class ExpensesViewController: UIViewController {
          
          save(title: title, date: selectedDate, note: noteText, amount: amountValue, accountName: selectedAccountType)
 
-//         tabBarController?.selectedIndex = 0
+        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     

@@ -32,6 +32,9 @@ class AddDebtViewController: UIViewController {
         let description = burrowDescription.text ?? ""
         
         save(name, amount, description, burrowedDateVar)
+        
+        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func save(_ name: String, _ amount: Double, _ description: String, _ burrowedDate: Date){

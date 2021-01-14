@@ -37,6 +37,9 @@ class BudgetViewController: UIViewController {
         let amount = Double(self.amount.text!) ?? 0.0
         
         save(name, selectedStartDate, selectedEndDate, amount)
+        
+        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func save(_ budgetName: String, _ startDate: Date, _ endDate: Date, _ amount: Double){

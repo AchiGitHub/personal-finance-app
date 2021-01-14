@@ -43,6 +43,8 @@ class NewAccountViewController: UIViewController {
         let credit_limit = Double(creditLimit.text!) ?? 0.0
         let accountDetails = AccountDetails(accountName: account_name, accountType: selectedAccountType, bankAccountNumber: bank_account_number, initialAmount: initial_amount, creditLimit: credit_limit)
         save(accountDetails: accountDetails)
+        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
 

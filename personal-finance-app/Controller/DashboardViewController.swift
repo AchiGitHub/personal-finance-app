@@ -10,13 +10,14 @@ import CoreData
 
 class DashboardViewController: UIViewController {
 
-    var accountsArray = [Account]();
+    var accountsArray = [Account]()
+    var expensesArray = [Income]()
     var totalBalance: Double = 0.0
     
     @IBOutlet weak var AccountsCollectionView: UICollectionView!
     @IBOutlet weak var balanceLbl: UILabel!
     @IBOutlet weak var totalBalanceLbl: UILabel!
-    
+    @IBOutlet weak var RecentTransactions: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class DashboardViewController: UIViewController {
         // Do any additional setup after loading the view.
         AccountsCollectionView.delegate = self
         AccountsCollectionView.dataSource = self
+        
+        RecentTransactions.delegate = self
+        RecentTransactions.dataSource = self
         
     }
     
@@ -39,6 +43,8 @@ class DashboardViewController: UIViewController {
         AccountsCollectionView.dataSource = self
         
         super.viewWillAppear(animated)
+        
+        loadTransactions()
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -58,16 +64,24 @@ class DashboardViewController: UIViewController {
             print("\(error)")
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func loadTransactions(){
+     
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let request: NSFetchRequest<Income> = Income.fetchRequest()
+            
+        
+        do {
+            expensesArray = try managedContext.fetch(request)
+        } catch let error as NSError {
+            print("\(error)")
+        }
     }
-    */
 
 }
 
@@ -77,17 +91,35 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         return 1
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        if(collectionView == self.RecentTransactions){
+            return CGSize(width: collectionView.frame.width - 20 , height: 150)
+        }
+        return CGSize(width: collectionView.frame.width , height: 170)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return accountsArray.count
+        if(collectionView == self.AccountsCollectionView){
+            return accountsArray.count
+        }
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = AccountsCollectionView.dequeueReusableCell(withReuseIdentifier: "AccountCell", for: indexPath) as! AccountCollectionViewCell
-        cell.accountName.text = accountsArray[indexPath.row].account_name
-        cell.accountType.text = accountsArray[indexPath.row].account_type
-        cell.initialAmount.text = String(accountsArray[indexPath.row].initial_amount)
-        cell.amount.text = String(accountsArray[indexPath.row].current_amount)
-        return cell
+        if(collectionView == self.AccountsCollectionView){
+            let cell = AccountsCollectionView.dequeueReusableCell(withReuseIdentifier: "AccountCell", for: indexPath) as! AccountCollectionViewCell
+            cell.accountName.text = accountsArray[indexPath.row].account_name
+            cell.accountType.text = accountsArray[indexPath.row].account_type
+            cell.initialAmount.text = String(accountsArray[indexPath.row].initial_amount)
+            cell.amount.text = String(accountsArray[indexPath.row].current_amount)
+            return cell
+        } else {
+            let cell = RecentTransactions.dequeueReusableCell(withReuseIdentifier: "TransactionCell", for: indexPath) as! RecentTransactionsCollectionViewCell
+            cell.transactionTypeName.text = expensesArray[indexPath.row].title
+            cell.transactionAmount.text = String(expensesArray[indexPath.row].amount)
+            return cell
+        }
     }
     
     

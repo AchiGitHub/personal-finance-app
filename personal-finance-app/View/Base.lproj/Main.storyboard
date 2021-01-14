@@ -1184,7 +1184,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Def-ZP-bsT">
                                                             <rect key="frame" x="0.0" y="0.0" width="379" height="37"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="379" id="EqC-ZO-AQm"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="379" id="EqC-ZO-AQm"/>
                                                                 <constraint firstAttribute="height" constant="37" id="iby-Ux-d5j"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1198,7 +1198,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="146" height="37"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="37" id="n7f-vq-3WC"/>
-                                                                        <constraint firstAttribute="width" constant="146" id="vB2-fb-7LY"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="vB2-fb-7LY"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -1217,7 +1217,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kd-O5-eZt">
                                                                     <rect key="frame" x="170" y="0.0" width="115" height="37"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="115" id="ZMO-Ig-0TQ"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="ZMO-Ig-0TQ"/>
                                                                         <constraint firstAttribute="height" constant="37" id="b2h-v5-2BL"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>

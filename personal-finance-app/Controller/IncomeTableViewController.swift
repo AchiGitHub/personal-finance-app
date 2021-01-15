@@ -8,6 +8,14 @@
 import UIKit
 import CoreData
 
+class TransactionsTableViewCell: UITableViewCell {
+    @IBOutlet weak var transactionTitle: UILabel!
+    @IBOutlet weak var transactionAmount: UILabel!
+    @IBOutlet weak var transactionAccount: UILabel!
+    @IBOutlet weak var transactionDate: UILabel!
+    
+}
+
 class IncomeTableViewController: UITableViewController {
 
     @IBOutlet var IncomeTableView: UITableView!
@@ -87,11 +95,13 @@ class IncomeTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "incomeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "incomeCell", for: indexPath) as! TransactionsTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = transactionsArray[indexPath.row].title
-        cell.detailTextLabel?.text = "Rs. \(transactionsArray[indexPath.row].amount)"
+        cell.transactionTitle.text = transactionsArray[indexPath.row].title
+        cell.transactionAmount.text = "Rs. \(transactionsArray[indexPath.row].amount)"
+        cell.transactionDate.text = convertDateToString(transactionsArray[indexPath.row].date_added!)
+        cell.transactionAccount.text = transactionsArray[indexPath.row].account_name
 
         return cell
     }

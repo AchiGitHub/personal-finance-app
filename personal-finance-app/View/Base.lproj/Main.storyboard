@@ -1258,6 +1258,22 @@
             </objects>
             <point key="canvasLocation" x="-4565.217391304348" y="1947.9910714285713"/>
         </scene>
+        <!--Transactions Report View Controller-->
+        <scene sceneID="iFd-wb-ciK">
+            <objects>
+                <viewController id="CSK-hE-meX" customClass="TransactionsReportViewController" customModule="personal_finance_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sbc-G8-KFU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ps4-fr-QW1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NSf-qG-XIJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9x-QL-YnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4764" y="1200"/>
+        </scene>
         <!--Reports-->
         <scene sceneID="5i6-34-hZE">
             <objects>
@@ -1322,7 +1338,7 @@
                                                                     <constraint firstAttribute="width" constant="103" id="40m-eN-bga"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate Income Report" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpZ-r0-VS2">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate Transactions Report" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpZ-r0-VS2">
                                                                 <rect key="frame" x="111" y="0.0" width="208" height="94"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="94" id="775-kL-hkz"/>
@@ -1336,11 +1352,15 @@
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="240" id="5e3-S9-D8I"/>
                                                     <constraint firstItem="wEX-tp-tDs" firstAttribute="centerY" secondItem="1Ky-HK-hdO" secondAttribute="centerY" id="SgE-EB-yG9"/>
                                                     <constraint firstItem="wEX-tp-tDs" firstAttribute="centerX" secondItem="1Ky-HK-hdO" secondAttribute="centerX" id="eu6-qI-IDQ"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Mun-Mm-DNA" appends="YES" id="fjb-5Q-ywJ"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diJ-DA-TCM">
                                                 <rect key="frame" x="0.0" y="480" width="414" height="240"/>
@@ -1355,7 +1375,7 @@
                                                                     <constraint firstAttribute="width" constant="103" id="pne-Mt-gYp"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate Expense Report" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSO-SV-ec2">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export Transactions Report" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSO-SV-ec2">
                                                                 <rect key="frame" x="111" y="0.0" width="208" height="94"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="94" id="13j-tt-E2f"/>
@@ -1404,6 +1424,11 @@
                 <tapGestureRecognizer id="Z0r-1z-Bcy" userLabel="View All Income">
                     <connections>
                         <segue destination="jDN-Ks-PCa" kind="show" id="J5V-aV-Ipt"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Mun-Mm-DNA" userLabel="Generate Transaction Report">
+                    <connections>
+                        <segue destination="CSK-hE-meX" kind="presentation" id="D2e-KR-yHd"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

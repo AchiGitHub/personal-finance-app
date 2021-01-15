@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_personal_finance_app_personal_finance_appUITests : NSObject
+@end
+@implementation PodsDummy_Pods_personal_finance_app_personal_finance_appUITests
+@end

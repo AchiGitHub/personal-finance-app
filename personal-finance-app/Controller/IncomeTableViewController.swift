@@ -22,6 +22,7 @@ class IncomeTableViewController: UITableViewController {
     
     let calendar = Calendar.current
     
+    var accountsArray = [Account]()
     var totalIncome = [TotalPayments]()
     var transactionsArray = [Income]()
     
@@ -42,6 +43,7 @@ class IncomeTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         loadTransactions()
+        loadAccounts()
     }
     
     func loadTransactions(){
@@ -62,6 +64,22 @@ class IncomeTableViewController: UITableViewController {
         }
     }
     
+    func loadAccounts(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let request: NSFetchRequest<Account> = Account.fetchRequest()
+        
+        do {
+            accountsArray = try managedContext.fetch(request)
+        } catch let error as NSError {
+            print("\(error)")
+        }
+    }
+    
     func deleteTransactions(_ index: Int) {
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -69,6 +87,16 @@ class IncomeTableViewController: UITableViewController {
         }
         
         let managedContext = appDelegate.persistentContainer.viewContext
+        
+        for account in accountsArray {
+            if(account.account_name == transactionsArray[index].account_name ){
+                if(transactionsArray[index].amount > 0){
+                    account.current_amount -= transactionsArray[index].amount
+                } else {
+                    account.current_amount -= transactionsArray[index].amount
+                }
+            }
+        }
         
         managedContext.delete(transactionsArray[index])
         

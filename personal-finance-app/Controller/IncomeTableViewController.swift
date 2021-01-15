@@ -12,10 +12,13 @@ class IncomeTableViewController: UITableViewController {
 
     @IBOutlet var IncomeTableView: UITableView!
     
+    let calendar = Calendar.current
+    
     var totalIncome = [TotalPayments]()
     var transactionsArray = [Income]()
     
     override func viewDidLoad() {
+        loadTransactions()
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -23,11 +26,7 @@ class IncomeTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        loadTransactions()
+        
     }
     
     //MARK: Trggered before view appears
@@ -54,17 +53,36 @@ class IncomeTableViewController: UITableViewController {
             print("\(error)")
         }
     }
+    
+    func deleteTransactions(_ index: Int) {
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        managedContext.delete(transactionsArray[index])
+        
+        do {
+            try managedContext.save()
+            print("deleted Successfully")
+        } catch let error as NSError {
+            print("Could not Save \(error), \(error.userInfo)")
+        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return transactionsArray.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return transactionsArray.count
+
     }
 
     
@@ -87,17 +105,17 @@ class IncomeTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            deleteTransactions(indexPath.row)
+            transactionsArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.

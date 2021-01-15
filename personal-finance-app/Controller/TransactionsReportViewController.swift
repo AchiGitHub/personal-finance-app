@@ -30,6 +30,7 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadTransactions()
+        orderIncome()
     }
     
     func loadTransactions(){
@@ -53,6 +54,41 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
             }
         } catch let error as NSError {
             print("\(error)")
+        }
+    }
+    
+    func orderIncome() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        var sortedArray = [Income]()
+        
+        for e in transactionsArray {
+            var alreadyExist = false
+            for s in sortedArray{
+                if s.account_name == e.account_name {
+                    s.amount = s.amount + e.amount
+                    alreadyExist = true
+                    break
+                }
+                
+            }
+            if alreadyExist != true {
+                var newItem = Income(context: managedContext)
+                newItem.account_name = e.account_name
+                newItem.amount = e.amount
+                sortedArray.append(newItem)
+            }
+        }
+        
+        for xx in sortedArray {
+            print(xx.account_name)
+            print(xx.amount)
+            print(".......")
         }
     }
 

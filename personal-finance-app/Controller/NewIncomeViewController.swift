@@ -49,10 +49,10 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
     
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         let selectedValue = pickerData[row] as String 
         selectedAccountName = selectedValue
     }
+    
     
     func loadAccounts (){
      
@@ -69,7 +69,6 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
             for account in accountsArray {
                 pickerData.append(account.account_name ?? "")
             }
-            
         } catch let error as NSError {
             print("\(error)")
         }

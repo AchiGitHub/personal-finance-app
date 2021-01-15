@@ -65,7 +65,7 @@ extension DebtsViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width: collectionView.frame.width - 20 , height: 150)
+        return CGSize(width: 400 , height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

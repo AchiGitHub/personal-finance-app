@@ -1033,25 +1033,25 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hct-WK-ny3">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hD6-Ai-SrQ">
-                                    <size key="itemSize" width="395" height="151"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hD6-Ai-SrQ">
+                                    <size key="itemSize" width="408" height="151"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="DebtCell" id="UW6-JY-XQv" customClass="DebtCollectionViewCell" customModule="personal_finance_app" customModuleProvider="target">
-                                        <rect key="frame" x="9.5" y="0.0" width="395" height="151"/>
+                                        <rect key="frame" x="3" y="10" width="408" height="151"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0sy-91-wmP" customClass="DebtCollectionViewCell" customModule="personal_finance_app" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="395" height="151"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="151"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SD5-9m-F3u">
-                                                    <rect key="frame" x="3" y="3" width="389" height="145"/>
+                                                    <rect key="frame" x="5" y="5" width="398" height="141"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="kCc-El-pm7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="389" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burrower Name:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-VD-fHL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="162" height="21"/>
@@ -1064,7 +1064,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhd-r7-JyB">
-                                                                    <rect key="frame" x="163" y="0.0" width="226" height="21"/>
+                                                                    <rect key="frame" x="163" y="0.0" width="235" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="kYd-8L-BdJ"/>
                                                                     </constraints>
@@ -1075,7 +1075,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="38F-Ta-jd2">
-                                                            <rect key="frame" x="0.0" y="29" width="389" height="21"/>
+                                                            <rect key="frame" x="0.0" y="29" width="398" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jae-IS-r9c">
                                                                     <rect key="frame" x="0.0" y="0.0" width="162" height="21"/>
@@ -1088,7 +1088,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-WB-xwh">
-                                                                    <rect key="frame" x="163" y="0.0" width="226" height="21"/>
+                                                                    <rect key="frame" x="163" y="0.0" width="235" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="CHo-wr-dpf"/>
                                                                     </constraints>
@@ -1099,10 +1099,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="scD-wq-q2b">
-                                                            <rect key="frame" x="0.0" y="58" width="389" height="58.5"/>
+                                                            <rect key="frame" x="0.0" y="58" width="398" height="54.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burrowed Date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-Bn-Gja">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="58.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="54.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="162" id="I22-cf-Qi3"/>
                                                                         <constraint firstAttribute="height" constant="21" id="Uaq-VZ-z8F"/>
@@ -1112,7 +1112,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v2-Wp-l26">
-                                                                    <rect key="frame" x="163" y="0.0" width="226" height="58.5"/>
+                                                                    <rect key="frame" x="163" y="0.0" width="235" height="54.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="ueV-UY-1k1"/>
                                                                     </constraints>
@@ -1123,7 +1123,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="1" id="70I-2o-sAf">
-                                                            <rect key="frame" x="0.0" y="124.5" width="389" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="120.5" width="398" height="20.5"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Wmt-Ur-Nsb">
@@ -1137,7 +1137,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Er-nU-GQP">
-                                                                    <rect key="frame" x="163" y="0.0" width="226" height="20.5"/>
+                                                                    <rect key="frame" x="163" y="0.0" width="235" height="20.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="Nbe-jZ-d7V"/>
                                                                     </constraints>
@@ -1152,14 +1152,14 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="SD5-9m-F3u" secondAttribute="trailing" constant="3" id="VOA-92-CS8"/>
-                                                <constraint firstItem="SD5-9m-F3u" firstAttribute="top" secondItem="0sy-91-wmP" secondAttribute="top" constant="3" id="XtX-vw-Dto"/>
-                                                <constraint firstAttribute="bottom" secondItem="SD5-9m-F3u" secondAttribute="bottom" constant="3" id="Zpm-DH-skq"/>
-                                                <constraint firstItem="SD5-9m-F3u" firstAttribute="leading" secondItem="0sy-91-wmP" secondAttribute="leading" constant="3" id="jnE-XZ-lxF"/>
+                                                <constraint firstAttribute="trailing" secondItem="SD5-9m-F3u" secondAttribute="trailing" constant="5" id="VOA-92-CS8"/>
+                                                <constraint firstItem="SD5-9m-F3u" firstAttribute="top" secondItem="0sy-91-wmP" secondAttribute="top" constant="5" id="XtX-vw-Dto"/>
+                                                <constraint firstAttribute="bottom" secondItem="SD5-9m-F3u" secondAttribute="bottom" constant="5" id="Zpm-DH-skq"/>
+                                                <constraint firstItem="SD5-9m-F3u" firstAttribute="leading" secondItem="0sy-91-wmP" secondAttribute="leading" constant="5" id="jnE-XZ-lxF"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.96598333120000002" green="0.96609288449999997" blue="0.96240454909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="customSize" width="395" height="151"/>
+                                        <size key="customSize" width="408" height="151"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="15"/>

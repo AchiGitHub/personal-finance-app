@@ -18,6 +18,8 @@
 		294C161B25B1926000BCB7C9 /* IncomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */; };
 		294C163925B1FB5F00BCB7C9 /* TransactionsReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C163825B1FB5F00BCB7C9 /* TransactionsReportViewController.swift */; };
 		294C163E25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C163D25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift */; };
+		294C164325B2463B00BCB7C9 /* TransactionReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C164225B2463B00BCB7C9 /* TransactionReportTableViewCell.swift */; };
+		294C164825B2479A00BCB7C9 /* ReportSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C164725B2479A00BCB7C9 /* ReportSelectionViewController.swift */; };
 		29583D5825B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29583D5725B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift */; };
 		296F549325A35C8400D3529D /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */; };
 		2985C26D25AFF85E0010D887 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2985C26C25AFF85E0010D887 /* BudgetViewController.swift */; };
@@ -68,6 +70,8 @@
 		294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewController.swift; sourceTree = "<group>"; };
 		294C163825B1FB5F00BCB7C9 /* TransactionsReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsReportViewController.swift; sourceTree = "<group>"; };
 		294C163D25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFilterReportViewController.swift; sourceTree = "<group>"; };
+		294C164225B2463B00BCB7C9 /* TransactionReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionReportTableViewCell.swift; sourceTree = "<group>"; };
+		294C164725B2479A00BCB7C9 /* ReportSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSelectionViewController.swift; sourceTree = "<group>"; };
 		29583D5725B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		2985C26C25AFF85E0010D887 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetViewController.swift; path = "personal-finance-app/Controller/BudgetViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -230,6 +234,8 @@
 				294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */,
 				294C163825B1FB5F00BCB7C9 /* TransactionsReportViewController.swift */,
 				294C163D25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift */,
+				294C164225B2463B00BCB7C9 /* TransactionReportTableViewCell.swift */,
+				294C164725B2479A00BCB7C9 /* ReportSelectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				29F663A3259362B8008C48AA /* personal_finance_app.xcdatamodeld in Sources */,
 				294A593925B02B640062ABCF /* DebtsViewController.swift in Sources */,
 				29A3D0FF259B61DE006C13E5 /* DashboardViewController.swift in Sources */,
+				294C164325B2463B00BCB7C9 /* TransactionReportTableViewCell.swift in Sources */,
 				2985C27525AFFCFD0010D887 /* BudgetListViewController.swift in Sources */,
 				29F6639D259362B8008C48AA /* ViewController.swift in Sources */,
 				2909377025AF27F7004A0323 /* ExpensesViewController.swift in Sources */,
@@ -517,6 +524,7 @@
 				294A593E25B02B960062ABCF /* DebtCollectionViewCell.swift in Sources */,
 				29F6639B259362B8008C48AA /* SceneDelegate.swift in Sources */,
 				2985C28225B0054F0010D887 /* BudgetCollectionViewCell.swift in Sources */,
+				294C164825B2479A00BCB7C9 /* ReportSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

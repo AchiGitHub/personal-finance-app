@@ -91,7 +91,7 @@ class IncomeTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = transactionsArray[indexPath.row].title
-        cell.detailTextLabel?.text = String(transactionsArray[indexPath.row].amount)
+        cell.detailTextLabel?.text = "Rs. \(transactionsArray[indexPath.row].amount)"
 
         return cell
     }

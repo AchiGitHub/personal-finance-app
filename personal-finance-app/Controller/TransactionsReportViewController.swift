@@ -126,7 +126,7 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
             pieChart.data =  data
         }
 //        pieChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0 )
-        
+        sortedArray.removeAll()
     }
     
 }

@@ -10,7 +10,10 @@ import CoreData
 import Charts
 
 class TransactionsReportViewController: UIViewController , ChartViewDelegate {
-    
+
+    var from : String?
+    var startDate: Date = Date()
+    var endDate: Date = Date()
 
     var pieChart = PieChartView()
     var entries =  [PieChartDataEntry]()
@@ -60,25 +63,43 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
     
     func orderIncome() {
         for e in transactionsArray {
-            var alreadyExist = false
-            for s in sortedArray{
-                if s.account_name == e.account_name {
-                    s.amount = s.amount + e.amount
-                    alreadyExist = true
-                    break
+            if(e.date_added! > startDate && e.date_added! < endDate){
+                var alreadyExist = false
+                for s in sortedArray{
+                    if s.account_name == e.account_name {
+                        if(from == "income"){
+                            if(e.amount > 0){
+                                s.amount = s.amount + e.amount
+                                alreadyExist = true
+                                break
+                            }
+                        } else {
+                            if(e.amount < 0){
+                                s.amount += e.amount*(-1)
+                                alreadyExist = true
+                                break
+                            }
+                        }
+                    }
                 }
-                
+                if alreadyExist != true {
+                    let newItem = SortArray()
+                    if(from == "income"){
+                        if(e.amount > 0){
+                            newItem.account_name = e.account_name!
+                            newItem.amount = e.amount
+                            sortedArray.append(newItem)
+                        }
+                    } else {
+                        if(e.amount < 0){
+                            newItem.account_name = e.account_name!
+                            newItem.amount = e.amount*(-1)
+                            sortedArray.append(newItem)
+                        }
+                    }
+                    
+                }
             }
-            if alreadyExist != true {
-                let newItem = SortArray()
-                newItem.account_name = e.account_name!
-                newItem.amount = e.amount
-                sortedArray.append(newItem)
-            }
-        }
-        
-        for account in sortedArray {
-            print(account.amount, account.account_name)
         }
     }
 
@@ -91,8 +112,8 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
         pieChart.center = view.center
         view.addSubview(pieChart)
         
-        for account in sortedArray {
-            entries.append(PieChartDataEntry(value: Double(account.amount), label: account.account_name))
+        for i in 0..<sortedArray.count {
+            entries.append(PieChartDataEntry(value: Double(sortedArray[i].amount), label: sortedArray[i].account_name))
         }
         
         let set  = PieChartDataSet (entries: entries)
@@ -101,8 +122,10 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
         
         let data = PieChartData(dataSet: set)
         
-        pieChart.data =  data
-        pieChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0 )
+        if sortedArray.count != 0 {
+            pieChart.data =  data
+        }
+//        pieChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0 )
         
     }
     

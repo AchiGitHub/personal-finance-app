@@ -1256,7 +1256,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ER-YY-4Ax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4565.217391304348" y="1947.9910714285713"/>
+            <point key="canvasLocation" x="-4506" y="2609"/>
         </scene>
         <!--Transactions Report View Controller-->
         <scene sceneID="iFd-wb-ciK">
@@ -1272,7 +1272,117 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9x-QL-YnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4764" y="1200"/>
+            <point key="canvasLocation" x="-5793" y="1362"/>
+        </scene>
+        <!--Filter Income Report-->
+        <scene sceneID="cAA-eo-Cal">
+            <objects>
+                <viewController id="Dmu-Pg-Ygs" customClass="IncomeFilterReportViewController" customModule="personal_finance_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3mo-tQ-B5S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dlz-5a-Zcd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oMg-ge-9NL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYZ-gd-VZF">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Fhr-4d-GJA">
+                                                        <rect key="frame" x="10" y="0.0" width="394" height="253"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXZ-Wt-bIX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="6D4-rt-YJ3"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="mEa-ok-c2J">
+                                                                <rect key="frame" x="0.0" y="61" width="394" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="I2x-e6-eQj"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <action selector="dateChange:" destination="wII-rg-uAG" eventType="valueChanged" id="9sb-5a-Mxg"/>
+                                                                    <action selector="onChangeStartDate:" destination="IrU-jK-FZr" eventType="valueChanged" id="pmd-M3-cDE"/>
+                                                                    <action selector="startDateOnChange:" destination="Dmu-Pg-Ygs" eventType="valueChanged" id="niy-MR-f6V"/>
+                                                                </connections>
+                                                            </datePicker>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7R-AC-zIc">
+                                                                <rect key="frame" x="0.0" y="132" width="394" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="7uF-Im-Sam"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Qw0-Ws-Fa6">
+                                                                <rect key="frame" x="0.0" y="193" width="394" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="ytX-9q-bEc"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <action selector="dateChange:" destination="wII-rg-uAG" eventType="valueChanged" id="mnT-Rj-aWI"/>
+                                                                    <action selector="endDateOnChange:" destination="Dmu-Pg-Ygs" eventType="valueChanged" id="8Qa-ct-iQD"/>
+                                                                    <action selector="onChangeEndDate:" destination="IrU-jK-FZr" eventType="valueChanged" id="0w4-rs-PDy"/>
+                                                                </connections>
+                                                            </datePicker>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Fhr-4d-GJA" firstAttribute="leading" secondItem="ZYZ-gd-VZF" secondAttribute="leading" constant="10" id="TOt-z2-k6O"/>
+                                                    <constraint firstItem="Fhr-4d-GJA" firstAttribute="top" secondItem="ZYZ-gd-VZF" secondAttribute="top" id="YFS-dn-XMS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Fhr-4d-GJA" secondAttribute="trailing" constant="10" id="YMF-bw-HGF"/>
+                                                    <constraint firstAttribute="height" constant="800" id="sHO-2S-MlA"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oMg-ge-9NL" firstAttribute="top" secondItem="NTR-ms-8hj" secondAttribute="top" id="8Bb-YY-eSp"/>
+                                    <constraint firstItem="oMg-ge-9NL" firstAttribute="bottom" secondItem="NTR-ms-8hj" secondAttribute="bottom" id="AKF-1v-c8f"/>
+                                    <constraint firstItem="oMg-ge-9NL" firstAttribute="width" secondItem="DNP-eD-r3G" secondAttribute="width" id="dYA-hg-JWm"/>
+                                    <constraint firstItem="oMg-ge-9NL" firstAttribute="trailing" secondItem="NTR-ms-8hj" secondAttribute="trailing" id="tF5-yq-QJK"/>
+                                    <constraint firstItem="oMg-ge-9NL" firstAttribute="leading" secondItem="NTR-ms-8hj" secondAttribute="leading" id="x3O-Nm-ehZ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="NTR-ms-8hj"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="DNP-eD-r3G"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uZG-QM-QaB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dlz-5a-Zcd" firstAttribute="leading" secondItem="uZG-QM-QaB" secondAttribute="leading" id="BE2-fR-Zbx"/>
+                            <constraint firstAttribute="trailing" secondItem="Dlz-5a-Zcd" secondAttribute="trailing" id="gfR-UB-M8g"/>
+                            <constraint firstItem="uZG-QM-QaB" firstAttribute="bottom" secondItem="Dlz-5a-Zcd" secondAttribute="bottom" id="rt8-t2-XpW"/>
+                            <constraint firstItem="Dlz-5a-Zcd" firstAttribute="top" secondItem="3mo-tQ-B5S" secondAttribute="top" id="uR3-D4-nKr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filter Income Report" id="b7o-VM-eXt">
+                        <barButtonItem key="rightBarButtonItem" title="View" id="zZT-8w-Sua">
+                            <connections>
+                                <segue destination="CSK-hE-meX" kind="presentation" identifier="incomeSegue" id="0OV-eA-HUr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="reportEndDate" destination="Qw0-Ws-Fa6" id="c4g-Jd-e1A"/>
+                        <outlet property="reportStartDate" destination="mEa-ok-c2J" id="ASP-X2-fMP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ejd-DS-Hi1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4917" y="973"/>
         </scene>
         <!--Reports-->
         <scene sceneID="5i6-34-hZE">
@@ -1375,7 +1485,7 @@
                                                                     <constraint firstAttribute="width" constant="103" id="pne-Mt-gYp"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export Transactions Report" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSO-SV-ec2">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Expense Reports" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSO-SV-ec2">
                                                                 <rect key="frame" x="111" y="0.0" width="208" height="94"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="94" id="13j-tt-E2f"/>
@@ -1389,11 +1499,15 @@
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="Ab1-Vi-beD" firstAttribute="centerY" secondItem="diJ-DA-TCM" secondAttribute="centerY" id="24j-cD-7E5"/>
                                                     <constraint firstAttribute="height" constant="240" id="eaF-OU-pYC"/>
                                                     <constraint firstItem="Ab1-Vi-beD" firstAttribute="centerX" secondItem="diJ-DA-TCM" secondAttribute="centerX" id="fxo-Y8-LaM"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="uoS-F5-xGt" appends="YES" id="TRh-SE-Kwd"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -1428,7 +1542,12 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="Mun-Mm-DNA" userLabel="Generate Transaction Report">
                     <connections>
-                        <segue destination="CSK-hE-meX" kind="presentation" id="D2e-KR-yHd"/>
+                        <segue destination="Dmu-Pg-Ygs" kind="show" identifier="" id="HqQ-1X-3mc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="uoS-F5-xGt" userLabel="Generate Expenses Report">
+                    <connections>
+                        <segue destination="tqb-V6-i9X" kind="show" id="Ryf-BN-3cr"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1985,7 +2104,120 @@
             </objects>
             <point key="canvasLocation" x="-2326.0869565217395" y="510.9375"/>
         </scene>
+        <!--Filter Expense Report-->
+        <scene sceneID="l0i-14-An8">
+            <objects>
+                <viewController id="tqb-V6-i9X" userLabel="Filter Expense Report" customClass="IncomeFilterReportViewController" customModule="personal_finance_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9N0-K7-VTp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzr-b1-0K8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="inX-wY-tbk">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyA-GF-KHA">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="js1-M6-JbK">
+                                                        <rect key="frame" x="10" y="0.0" width="394" height="253"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CU-2R-YOA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="RvC-Bg-FJy"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="BG8-wP-cQS">
+                                                                <rect key="frame" x="0.0" y="61" width="394" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="mWJ-Qa-lZi"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <action selector="dateChange:" destination="wII-rg-uAG" eventType="valueChanged" id="0PA-pq-wAC"/>
+                                                                    <action selector="onChangeStartDate:" destination="IrU-jK-FZr" eventType="valueChanged" id="M23-ZO-uTE"/>
+                                                                    <action selector="startDateOnChange:" destination="tqb-V6-i9X" eventType="valueChanged" id="0tf-bb-hzO"/>
+                                                                </connections>
+                                                            </datePicker>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfb-ag-Ffq">
+                                                                <rect key="frame" x="0.0" y="132" width="394" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="x4E-a2-kJZ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="fq3-VL-8IG">
+                                                                <rect key="frame" x="0.0" y="193" width="394" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="Zto-p9-upC"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <action selector="dateChange:" destination="wII-rg-uAG" eventType="valueChanged" id="nMV-4C-esV"/>
+                                                                    <action selector="endDateOnChange:" destination="tqb-V6-i9X" eventType="valueChanged" id="77z-T1-c6a"/>
+                                                                    <action selector="onChangeEndDate:" destination="IrU-jK-FZr" eventType="valueChanged" id="UJC-Fs-uRW"/>
+                                                                </connections>
+                                                            </datePicker>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="js1-M6-JbK" firstAttribute="leading" secondItem="UyA-GF-KHA" secondAttribute="leading" constant="10" id="Saa-6X-JHB"/>
+                                                    <constraint firstItem="js1-M6-JbK" firstAttribute="top" secondItem="UyA-GF-KHA" secondAttribute="top" id="ipB-yT-N4I"/>
+                                                    <constraint firstAttribute="height" constant="800" id="rNG-vE-7ib"/>
+                                                    <constraint firstAttribute="trailing" secondItem="js1-M6-JbK" secondAttribute="trailing" constant="10" id="sRe-wh-zIa"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="inX-wY-tbk" firstAttribute="trailing" secondItem="RNf-HG-3b8" secondAttribute="trailing" id="9JE-zh-G25"/>
+                                    <constraint firstItem="inX-wY-tbk" firstAttribute="width" secondItem="f5K-7e-oNF" secondAttribute="width" id="HRs-7e-DWN"/>
+                                    <constraint firstItem="inX-wY-tbk" firstAttribute="leading" secondItem="RNf-HG-3b8" secondAttribute="leading" id="ffA-nG-UTt"/>
+                                    <constraint firstItem="inX-wY-tbk" firstAttribute="bottom" secondItem="RNf-HG-3b8" secondAttribute="bottom" id="udm-Se-IUX"/>
+                                    <constraint firstItem="inX-wY-tbk" firstAttribute="top" secondItem="RNf-HG-3b8" secondAttribute="top" id="zmY-rA-7WW"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="RNf-HG-3b8"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="f5K-7e-oNF"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fym-EM-qZM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dzr-b1-0K8" secondAttribute="trailing" id="Iae-vu-U6j"/>
+                            <constraint firstItem="fym-EM-qZM" firstAttribute="bottom" secondItem="dzr-b1-0K8" secondAttribute="bottom" id="cx0-bU-l7s"/>
+                            <constraint firstItem="dzr-b1-0K8" firstAttribute="top" secondItem="9N0-K7-VTp" secondAttribute="top" id="d0u-rO-sMv"/>
+                            <constraint firstItem="dzr-b1-0K8" firstAttribute="leading" secondItem="fym-EM-qZM" secondAttribute="leading" id="mgy-HE-0Yx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filter Expense Report" id="Ds8-aE-Gaq">
+                        <barButtonItem key="rightBarButtonItem" title="View" id="4T6-KS-1eW">
+                            <connections>
+                                <segue destination="CSK-hE-meX" kind="presentation" identifier="expenseSegue" id="xs1-D3-roA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="reportEndDate" destination="fq3-VL-8IG" id="F70-TD-Tru"/>
+                        <outlet property="reportStartDate" destination="BG8-wP-cQS" id="0uk-IQ-hfl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ItG-Vh-HW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4767" y="1793"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xs1-D3-roA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="64" width="128" height="128"/>
         <image name="billing" width="256" height="256"/>

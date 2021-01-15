@@ -17,6 +17,7 @@
 		294A594825B0310E0062ABCF /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A594725B0310E0062ABCF /* utilities.swift */; };
 		294C161B25B1926000BCB7C9 /* IncomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */; };
 		294C163925B1FB5F00BCB7C9 /* TransactionsReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C163825B1FB5F00BCB7C9 /* TransactionsReportViewController.swift */; };
+		294C163E25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C163D25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift */; };
 		29583D5825B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29583D5725B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift */; };
 		296F549325A35C8400D3529D /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */; };
 		2985C26D25AFF85E0010D887 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2985C26C25AFF85E0010D887 /* BudgetViewController.swift */; };
@@ -66,6 +67,7 @@
 		294A594725B0310E0062ABCF /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewController.swift; sourceTree = "<group>"; };
 		294C163825B1FB5F00BCB7C9 /* TransactionsReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsReportViewController.swift; sourceTree = "<group>"; };
+		294C163D25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFilterReportViewController.swift; sourceTree = "<group>"; };
 		29583D5725B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		2985C26C25AFF85E0010D887 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetViewController.swift; path = "personal-finance-app/Controller/BudgetViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -227,6 +229,7 @@
 				29583D5725B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift */,
 				294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */,
 				294C163825B1FB5F00BCB7C9 /* TransactionsReportViewController.swift */,
+				294C163D25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				294C161B25B1926000BCB7C9 /* IncomeTableViewController.swift in Sources */,
 				1118B11525AE45A800C0D100 /* TabBarController.swift in Sources */,
 				294C163925B1FB5F00BCB7C9 /* TransactionsReportViewController.swift in Sources */,
+				294C163E25B231DA00BCB7C9 /* IncomeFilterReportViewController.swift in Sources */,
 				29583D5825B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift in Sources */,
 				29F66399259362B8008C48AA /* AppDelegate.swift in Sources */,
 				11EE89B925AE2ADD007DEFEF /* NewIncomeViewController.swift in Sources */,

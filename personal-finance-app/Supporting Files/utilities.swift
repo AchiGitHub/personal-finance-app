@@ -34,4 +34,3 @@ class TotalPayments {
         self.payments = payments
     }
 }
-

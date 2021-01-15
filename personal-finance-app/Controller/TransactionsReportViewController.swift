@@ -14,6 +14,7 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
 
     var pieChart = PieChartView()
     var entries =  [PieChartDataEntry]()
+    var sortedArray = [SortArray]()
     
     var totalIncome: Double = 0.0
     var totalExpense: Double = 0.0
@@ -30,7 +31,6 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadTransactions()
-        orderIncome()
     }
     
     func loadTransactions(){
@@ -52,21 +52,13 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
                     totalExpense += record.amount
                 }
             }
+            orderIncome()
         } catch let error as NSError {
             print("\(error)")
         }
     }
     
     func orderIncome() {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        var sortedArray = [Income]()
-        
         for e in transactionsArray {
             var alreadyExist = false
             for s in sortedArray{
@@ -78,17 +70,15 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
                 
             }
             if alreadyExist != true {
-                var newItem = Income(context: managedContext)
-                newItem.account_name = e.account_name
+                let newItem = SortArray()
+                newItem.account_name = e.account_name!
                 newItem.amount = e.amount
                 sortedArray.append(newItem)
             }
         }
         
-        for xx in sortedArray {
-            print(xx.account_name)
-            print(xx.amount)
-            print(".......")
+        for account in sortedArray {
+            print(account.amount, account.account_name)
         }
     }
 
@@ -101,8 +91,9 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
         pieChart.center = view.center
         view.addSubview(pieChart)
         
-        entries.append(PieChartDataEntry(value: Double(totalIncome), label: "Total Income"))
-        entries.append(PieChartDataEntry(value: Double(totalExpense*(-1)), label: "Total Expense"))
+        for account in sortedArray {
+            entries.append(PieChartDataEntry(value: Double(account.amount), label: account.account_name))
+        }
         
         let set  = PieChartDataSet (entries: entries)
         
@@ -115,4 +106,10 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
         
     }
     
+}
+
+
+class SortArray {
+    var account_name: String = ""
+    var amount: Double = 0.0
 }

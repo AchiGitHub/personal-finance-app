@@ -341,25 +341,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="T6G-GN-cfB">
-                                                        <rect key="frame" x="82" y="87.5" width="250" height="125"/>
+                                                        <rect key="frame" x="50" y="87.5" width="314" height="125"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XUL-Tv-PZJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="250" height="80"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22,000" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHv-dy-DHP">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="80"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="250" id="dMt-G2-exK"/>
-                                                                            <constraint firstAttribute="height" constant="80" id="vN1-YN-pZd"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
-                                                                        <color key="textColor" red="0.96598333120000002" green="0.96609288449999997" blue="0.96240454909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22,000" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHv-dy-DHP">
+                                                                <rect key="frame" x="7" y="0.0" width="300" height="80"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="300" id="dMt-G2-exK"/>
+                                                                    <constraint firstAttribute="height" constant="80" id="vN1-YN-pZd"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                                                <color key="textColor" red="0.96598333120000002" green="0.96609288449999997" blue="0.96240454909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8O-Dw-bOK">
-                                                                <rect key="frame" x="74" y="83" width="102" height="42"/>
+                                                                <rect key="frame" x="106" y="83" width="102" height="42"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="42" id="CVd-2d-ysY"/>
                                                                 </constraints>
@@ -372,9 +367,11 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.62764018769999996" green="0.4359010458" blue="0.92553561929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
+                                                    <constraint firstItem="T6G-GN-cfB" firstAttribute="leading" secondItem="80V-uT-ko9" secondAttribute="leading" constant="50" id="69e-e6-Mkm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="T6G-GN-cfB" secondAttribute="bottom" constant="87.5" id="CSO-QG-Y86"/>
                                                     <constraint firstAttribute="height" constant="300" id="MxF-kX-0dM"/>
-                                                    <constraint firstItem="T6G-GN-cfB" firstAttribute="centerX" secondItem="80V-uT-ko9" secondAttribute="centerX" id="keI-Ke-e9k"/>
-                                                    <constraint firstItem="T6G-GN-cfB" firstAttribute="centerY" secondItem="80V-uT-ko9" secondAttribute="centerY" id="o1n-K4-f6W"/>
+                                                    <constraint firstItem="T6G-GN-cfB" firstAttribute="top" secondItem="80V-uT-ko9" secondAttribute="top" constant="87.5" id="OUA-sS-l9b"/>
+                                                    <constraint firstAttribute="trailing" secondItem="T6G-GN-cfB" secondAttribute="trailing" constant="50" id="nrQ-zX-8lN"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdP-Ce-EBO">
@@ -1199,7 +1196,7 @@
             </objects>
             <point key="canvasLocation" x="-1888.4057971014495" y="2055.8035714285716"/>
         </scene>
-        <!--Planned Payment-->
+        <!--Reports-->
         <scene sceneID="5i6-34-hZE">
             <objects>
                 <viewController id="OTC-DN-Itw" sceneMemberID="viewController">
@@ -1209,7 +1206,7 @@
                         <viewLayoutGuide key="safeArea" id="q6U-iJ-Ab9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Planned Payment" id="MlH-tH-4Mh"/>
+                    <navigationItem key="navigationItem" title="Reports" id="MlH-tH-4Mh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2A-yP-ZVC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

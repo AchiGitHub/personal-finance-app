@@ -45,7 +45,7 @@ class NewAccountViewController: UIViewController {
         let bank_account_number = accountNumber.text ?? "000"
         let initial_amount = Double(initialAmount.text!) ?? 0.0
         let credit_limit = Double(creditLimit.text!) ?? 0.0
-        let accountDetails = AccountDetails(accountName: account_name, accountType: selectedAccountType, bankAccountNumber: bank_account_number, initialAmount: initial_amount, creditLimit: credit_limit)
+        let accountDetails = AccountDetails(accountName: account_name, accountType: selectedAccountType, bankAccountNumber: bank_account_number, initialAmount: initial_amount, creditLimit: credit_limit, cycleDate: selectedDate)
         save(accountDetails: accountDetails)
         navigationController?.popToRootViewController(animated: true)
         navigationController?.popViewController(animated: true)
@@ -131,5 +131,5 @@ struct AccountDetails {
     var bankAccountNumber: String? = ""
     var initialAmount: Double = 0.0
     var creditLimit: Double? = 0.0
-    var cycleDate: Date? = Date()
+    var cycleDate: Date?
 }

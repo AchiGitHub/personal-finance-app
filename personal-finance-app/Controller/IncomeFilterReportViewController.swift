@@ -44,9 +44,7 @@ class IncomeFilterReportViewController: UIViewController {
     
     @IBAction func calculateOnClick(_ sender: UIButton) {
         orderIncome()
-        for i in sortedArray {
-            print(i.account_name)
-        }
+        tableData.reloadData()
     }
     
     

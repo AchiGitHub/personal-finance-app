@@ -1353,7 +1353,7 @@
                                                                     <constraint firstAttribute="height" constant="51" id="nPg-TX-fdC"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <state key="normal" title="CALCULATE">
+                                                                <state key="normal" title="GENERATE">
                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>

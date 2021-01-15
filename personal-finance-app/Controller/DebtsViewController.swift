@@ -63,10 +63,10 @@ extension DebtsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     //MARK: - UICollectionViewDelegateFlowLayout
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
-        return CGSize(width: 400 , height: 180)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+//    {
+//        return CGSize(width: collectionView.frame.width - 20 , height: 180)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = DebtCollectionView.dequeueReusableCell(withReuseIdentifier: "DebtCell", for: indexPath) as! DebtCollectionViewCell
@@ -74,7 +74,7 @@ extension DebtsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.burrowerName.text = debtArray[indexPath.row].burrowed_from
         cell.burrowDescription.text = debtArray[indexPath.row].burrow_description
         cell.burrowedDate.text = convertDateToString(debtArray[indexPath.row].burrow_date!)
-        cell.burrowedAmount.text = String(debtArray[indexPath.row].burrow_amount)
+        cell.burrowedAmount.text = "Rs. \(debtArray[indexPath.row].burrow_amount)"
         
         return cell
     }

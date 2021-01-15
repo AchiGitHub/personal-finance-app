@@ -13,3 +13,25 @@ func convertDateToString(_ incomingDate: Date) -> String{
     
     return dateFormatter.string(from: incomingDate)
 }
+
+
+class MonthlyPayment {
+    var name = ""
+    var value = ""
+    
+    init(name: String, value:String) {
+        self.name = name
+        self.value = value
+    }
+}
+
+class TotalPayments {
+    var period: String?
+    var payments: [MonthlyPayment]?
+    
+    init(period: String, payments: [MonthlyPayment]) {
+        self.period = period
+        self.payments = payments
+    }
+}
+

@@ -15,6 +15,7 @@
 		294A593E25B02B960062ABCF /* DebtCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A593D25B02B960062ABCF /* DebtCollectionViewCell.swift */; };
 		294A594325B02BAC0062ABCF /* AddDebtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A594225B02BAC0062ABCF /* AddDebtViewController.swift */; };
 		294A594825B0310E0062ABCF /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A594725B0310E0062ABCF /* utilities.swift */; };
+		294C161B25B1926000BCB7C9 /* IncomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */; };
 		29583D5825B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29583D5725B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift */; };
 		296F549325A35C8400D3529D /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */; };
 		2985C26D25AFF85E0010D887 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2985C26C25AFF85E0010D887 /* BudgetViewController.swift */; };
@@ -59,6 +60,7 @@
 		294A593D25B02B960062ABCF /* DebtCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtCollectionViewCell.swift; sourceTree = "<group>"; };
 		294A594225B02BAC0062ABCF /* AddDebtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDebtViewController.swift; sourceTree = "<group>"; };
 		294A594725B0310E0062ABCF /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
+		294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewController.swift; sourceTree = "<group>"; };
 		29583D5725B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		296F549225A35C8400D3529D /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		2985C26C25AFF85E0010D887 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetViewController.swift; path = "personal-finance-app/Controller/BudgetViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -204,6 +206,7 @@
 				294A593D25B02B960062ABCF /* DebtCollectionViewCell.swift */,
 				294A594225B02BAC0062ABCF /* AddDebtViewController.swift */,
 				29583D5725B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift */,
+				294C161A25B1926000BCB7C9 /* IncomeTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				29F6639D259362B8008C48AA /* ViewController.swift in Sources */,
 				2909377025AF27F7004A0323 /* ExpensesViewController.swift in Sources */,
 				294A594325B02BAC0062ABCF /* AddDebtViewController.swift in Sources */,
+				294C161B25B1926000BCB7C9 /* IncomeTableViewController.swift in Sources */,
 				1118B11525AE45A800C0D100 /* TabBarController.swift in Sources */,
 				29583D5825B08C4F00648543 /* RecentTransactionsCollectionViewCell.swift in Sources */,
 				29F66399259362B8008C48AA /* AppDelegate.swift in Sources */,

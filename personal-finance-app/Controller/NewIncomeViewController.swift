@@ -32,7 +32,6 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
         accountName.delegate = self;
         pickerData.removeAll()
         loadAccounts()
-//        loadIncome() // testing
         
     }
     
@@ -69,31 +68,6 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
             accountsArray = try managedContext.fetch(request)
             for account in accountsArray {
                 pickerData.append(account.account_name ?? "")
-            }
-            
-        } catch let error as NSError {
-            print("\(error)")
-        }
-       
-    }
-    
-    func loadIncome (){
-     
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let request: NSFetchRequest<Income> = Income.fetchRequest()
-        	
-        
-        do {
-            var incomeArray = [Income]();
-            incomeArray = try managedContext.fetch(request)
-            
-            for income in incomeArray {
-                print(income.account_name)
             }
             
         } catch let error as NSError {

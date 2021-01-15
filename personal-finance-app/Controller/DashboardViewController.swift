@@ -140,8 +140,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
             let cell = AccountsCollectionView.dequeueReusableCell(withReuseIdentifier: "AccountCell", for: indexPath) as! AccountCollectionViewCell
             cell.accountName.text = accountsArray[indexPath.row].account_name
             cell.accountType.text = accountsArray[indexPath.row].account_type
-            cell.initialAmount.text = String(accountsArray[indexPath.row].initial_amount)
-            cell.amount.text = String(accountsArray[indexPath.row].current_amount)
+            cell.initialAmount.text = "Initial Rs. \(accountsArray[indexPath.row].initial_amount)"
+            cell.amount.text = "Rs. \(accountsArray[indexPath.row].current_amount)"
             return cell
         } else {
             let cell = RecentTransactions.dequeueReusableCell(withReuseIdentifier: "TransactionCell", for: indexPath) as! RecentTransactionsCollectionViewCell

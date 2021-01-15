@@ -17,8 +17,12 @@ class NewAccountViewController: UIViewController {
     @IBOutlet weak var creditLimit: UITextField!
     @IBOutlet weak var bankAccountNumberLbl: UILabel!
     @IBOutlet weak var creditLimitLbl: UILabel!
+    @IBOutlet weak var creditCardCyleEndDateLbl: UILabel!
+    @IBOutlet weak var creditCardCycleEndDate: UIDatePicker!
     
     var selectedAccountType: String = ""
+    
+    var selectedDate: Date = Date()
     
     var pickerData: [String] = [String]()
     
@@ -46,6 +50,11 @@ class NewAccountViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func creditCycleEndDate(_ sender: UIDatePicker) {
+        selectedDate = sender.date
+    }
+    
 }
 
 func save(accountDetails: AccountDetails){
@@ -62,6 +71,7 @@ func save(accountDetails: AccountDetails){
     newAccount.bank_account_number = accountDetails.bankAccountNumber
     newAccount.credit_limit = accountDetails.creditLimit!
     newAccount.current_amount = accountDetails.initialAmount
+    newAccount.credit_cycle = accountDetails.cycleDate
     
     do {
         try managedContext.save()
@@ -84,15 +94,26 @@ extension NewAccountViewController: UIPickerViewDataSource {
         let selectedValue = pickerData[row] as String
         
         if(selectedValue == "Cash"){
-            accountNumber.isHidden = true;
-            creditLimit.isHidden = true;
-            bankAccountNumberLbl.isHidden = true;
-            creditLimitLbl.isHidden = true;
+            accountNumber.isHidden = true
+            creditLimit.isHidden = true
+            bankAccountNumberLbl.isHidden = true
+            creditLimitLbl.isHidden = true
+            creditCardCyleEndDateLbl.isHidden = true
+            creditCardCycleEndDate.isHidden = true
+        } else if(selectedValue == "Savings Account") {
+            accountNumber.isHidden = false
+            creditLimit.isHidden = true
+            bankAccountNumberLbl.isHidden = false
+            creditLimitLbl.isHidden = true
+            creditCardCyleEndDateLbl.isHidden = true
+            creditCardCycleEndDate.isHidden = true
         } else {
-            accountNumber.isHidden = false;
-            creditLimit.isHidden = false;
-            bankAccountNumberLbl.isHidden = false;
-            creditLimitLbl.isHidden = false;
+            accountNumber.isHidden = false
+            creditLimit.isHidden = false
+            bankAccountNumberLbl.isHidden = false
+            creditLimitLbl.isHidden = false
+            creditCardCyleEndDateLbl.isHidden = false
+            creditCardCycleEndDate.isHidden = false
         }
         selectedAccountType = selectedValue
     }
@@ -110,4 +131,5 @@ struct AccountDetails {
     var bankAccountNumber: String? = ""
     var initialAmount: Double = 0.0
     var creditLimit: Double? = 0.0
+    var cycleDate: Date? = Date()
 }

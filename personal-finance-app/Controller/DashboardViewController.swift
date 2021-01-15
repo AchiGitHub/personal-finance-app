@@ -12,12 +12,14 @@ class DashboardViewController: UIViewController {
 
     var accountsArray = [Account]()
     var expensesArray = [Income]()
-    var totalBalance: Double = 0.0
     
     @IBOutlet weak var AccountsCollectionView: UICollectionView!
     @IBOutlet weak var balanceLbl: UILabel!
     @IBOutlet weak var totalBalanceLbl: UILabel!
     @IBOutlet weak var RecentTransactions: UICollectionView!
+    @IBOutlet weak var AccountsRootCollectionView: UIView!
+    @IBOutlet weak var RecentTransactionsRootView: UIView!
+    @IBOutlet weak var NoRecentTransactionsUI: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,17 @@ class DashboardViewController: UIViewController {
         RecentTransactions.delegate = self
         RecentTransactions.dataSource = self
         
+        
+        
     }
     
     // MARK: Triggered when tab view appears
     override func viewDidAppear(_ animated: Bool) {
         AccountsCollectionView.reloadData()
+        RecentTransactions.reloadData()
+        
+        hideAccountsViewIfEmpty()
+        hideTransactionsViewIfEmpty()
     }
     
     //MARK: Trggered before view appears
@@ -45,7 +53,10 @@ class DashboardViewController: UIViewController {
         super.viewWillAppear(animated)
         
         loadTransactions()
-        
+        loadAccounts()
+    }
+    
+    func loadAccounts(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -56,10 +67,11 @@ class DashboardViewController: UIViewController {
         
         do {
             accountsArray = try managedContext.fetch(request)
+            var totalBalance: Double = 0.0
             for account in accountsArray {
                 totalBalance += account.current_amount
             }
-            totalBalanceLbl.text = String(totalBalance)
+            totalBalanceLbl.text = "Rs. \(totalBalance)"
         } catch let error as NSError {
             print("\(error)")
         }
@@ -77,9 +89,26 @@ class DashboardViewController: UIViewController {
             
         
         do {
-            expensesArray = try managedContext.fetch(request)
+            expensesArray = try managedContext.fetch(request).reversed()
         } catch let error as NSError {
             print("\(error)")
+        }
+    }
+    
+    func hideAccountsViewIfEmpty(){
+        if(accountsArray.count == 0){
+            AccountsRootCollectionView.isHidden = true
+        } else {
+            AccountsRootCollectionView.isHidden = false
+        }
+    }
+    
+    func hideTransactionsViewIfEmpty(){
+        if(expensesArray.count == 0){
+            RecentTransactionsRootView.isHidden = true
+        } else {
+            RecentTransactionsRootView.isHidden = false
+            NoRecentTransactionsUI.isHidden = true
         }
     }
 
@@ -103,7 +132,7 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         if(collectionView == self.AccountsCollectionView){
             return accountsArray.count
         }
-        return 10
+        return expensesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -117,10 +146,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         } else {
             let cell = RecentTransactions.dequeueReusableCell(withReuseIdentifier: "TransactionCell", for: indexPath) as! RecentTransactionsCollectionViewCell
             cell.transactionTypeName.text = expensesArray[indexPath.row].title
-            cell.transactionAmount.text = String(expensesArray[indexPath.row].amount)
+            cell.transactionAmount.text = "Rs. \(expensesArray[indexPath.row].amount)"
             return cell
         }
     }
-    
-    
 }

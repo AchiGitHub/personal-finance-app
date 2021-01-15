@@ -103,8 +103,8 @@ extension BudgetListViewController: UICollectionViewDelegate, UICollectionViewDa
             }
         }
         cell.budgetName.text = budgetArray[indexPath.row].title
-        cell.totalBudget.text = String(budgetArray[indexPath.row].amount)
-        cell.currentExpenses.text = String(totalExpenses*(-1))
+        cell.totalBudget.text = "Rs. \(budgetArray[indexPath.row].amount)"
+        cell.currentExpenses.text = "Rs. \(totalExpenses*(-1))"
         cell.budgetProgressBar.progress = Float((totalExpenses*(-1)/budgetArray[indexPath.row].amount))
         return cell
     }

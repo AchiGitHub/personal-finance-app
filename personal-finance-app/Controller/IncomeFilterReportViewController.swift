@@ -47,6 +47,51 @@ class IncomeFilterReportViewController: UIViewController {
         tableData.reloadData()
     }
     
+    @IBAction func downloadCSV(_ sender: Any) {
+        orderIncome()
+
+        let currentDateTime = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYMMdd_HHmmss"
+        
+        let sFileName =  "Report_" + dateFormatter.string(from: currentDateTime) + ".csv"
+        let documenDirectoryPath =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let documentURL = URL(fileURLWithPath: documenDirectoryPath).appendingPathComponent(sFileName)
+        
+        let output = OutputStream.toMemory()
+        let csvWriter = CHCSVWriter(outputStream: output, encoding: String.Encoding.utf8.rawValue
+                                    , delimiter: ",".utf16.first!)
+        
+        csvWriter?.writeField("Account")
+        csvWriter?.writeField("Amount")
+        csvWriter?.finishLine()
+        
+        for i in sortedArray {
+            csvWriter?.writeField(i.account_name)
+            csvWriter?.writeField(i.amount)
+            csvWriter?.finishLine()
+        }
+        
+        csvWriter?.closeStream()
+        
+        let buffer =  (output.property(forKey: .dataWrittenToMemoryStreamKey) as? Data)!
+        
+        do {
+            try buffer.write(to: documentURL)
+        }
+        catch{}
+        tableData.reloadData()
+        
+        
+            let alert = UIAlertController(title: "File saved to folder", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{action in } ))
+            
+            present(alert, animated: true)
+            
+        
+    }
+    
+    
     
     func loadTransactions(){
         

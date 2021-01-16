@@ -32,6 +32,8 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
         accountName.delegate = self;
         pickerData.removeAll()
         loadAccounts()
+        let row = accountName.selectedRow(inComponent: 0)
+        pickerView(accountName, didSelectRow: row, inComponent: 0)
         
     }
     

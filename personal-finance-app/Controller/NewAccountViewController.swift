@@ -38,6 +38,8 @@ class NewAccountViewController: UIViewController {
         creditLimitLbl.isHidden = true;
         
         pickerData = ["Cash", "Savings Account", "Credit Card Account", "Current Account"]
+        let row = accountType.selectedRow(inComponent: 0)
+        pickerView(accountType, didSelectRow: row, inComponent: 0)
     }
     
     @IBAction func saveAccount(_ sender: Any) {

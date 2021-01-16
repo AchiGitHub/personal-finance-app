@@ -30,6 +30,8 @@ class ExpensesViewController: UIViewController {
         loadAccounts()
         loadIncome()
         // Do any additional setup after loading the view.
+        let row = paymentAccount.selectedRow(inComponent: 0)
+        pickerView(paymentAccount, didSelectRow: row, inComponent: 0)
     }
     
 

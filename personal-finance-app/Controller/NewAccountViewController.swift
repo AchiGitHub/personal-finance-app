@@ -40,6 +40,13 @@ class NewAccountViewController: UIViewController {
         pickerData = ["Cash", "Savings Account", "Credit Card Account", "Current Account"]
         let row = accountType.selectedRow(inComponent: 0)
         pickerView(accountType, didSelectRow: row, inComponent: 0)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func saveAccount(_ sender: Any) {
@@ -55,6 +62,20 @@ class NewAccountViewController: UIViewController {
     
     @IBAction func creditCycleEndDate(_ sender: UIDatePicker) {
         selectedDate = sender.date
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
 }

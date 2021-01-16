@@ -112,6 +112,7 @@ class IncomeFilterReportViewController: UIViewController {
     }
     
     func orderIncome() {
+        sortedArray = [SortArray]()
         for e in transactionsArray {
             if(e.date_added! > selectedStartDate && e.date_added! < selectedEndDate){
                 var alreadyExist = false

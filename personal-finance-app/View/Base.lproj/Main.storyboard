@@ -876,7 +876,7 @@
             </objects>
             <point key="canvasLocation" x="3950.7246376811599" y="103.79464285714285"/>
         </scene>
-        <!--Debts-->
+        <!--Add Debt-->
         <scene sceneID="DE9-eQ-O96">
             <objects>
                 <viewController id="JKU-3L-A35" customClass="AddDebtViewController" customModule="personal_finance_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -1000,7 +1000,7 @@
                             <constraint firstAttribute="bottom" secondItem="QJZ-uu-TKF" secondAttribute="bottom" id="oAV-p2-e4t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Debts" id="tjg-mZ-7QC">
+                    <navigationItem key="navigationItem" title="Add Debt" id="tjg-mZ-7QC">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="8HL-gV-X9E">
                             <connections>
                                 <action selector="saveDebt:" destination="JKU-3L-A35" id="XLb-RZ-P68"/>

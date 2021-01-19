@@ -37,10 +37,10 @@ class AddDebtViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func save(_ name: String, _ amount: Double, _ description: String, _ burrowedDate: Date){
+    func save(_ name: String, _ amount: Double, _ description: String, _ burrowedDate: Date) -> Bool{
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
+            return false
         }
     
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -55,6 +55,8 @@ class AddDebtViewController: UIViewController {
             try managedContext.save()
         } catch let error as NSError {
             print("Could not Save \(error)")
+            return false
         }
+        return true
     }
 }

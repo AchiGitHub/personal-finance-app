@@ -2,7 +2,7 @@
 //  ExpensesViewController.swift
 //  personal-finance-app
 //
-//  Created by Achintha Ikiriwatte on 2021-01-13.
+//  Created by ra on 2021-01-13.
 //
 
 import UIKit

@@ -90,7 +90,7 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
          let noteText = note.text ?? ""
          let amountValue = Double(amount.text!) ?? 0.0
          
-         save(title: title, date: selectedDate, note: noteText, amount: amountValue, accountName: selectedAccountName)
+         save(title: title, date: selectedDate, note: noteText, amount: amountValue, accountName: selectedAccountName, updateAC: true)
 
         navigationController?.popToRootViewController(animated: true)
         navigationController?.popViewController(animated: true)
@@ -100,10 +100,10 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
         selectedDate = sender.date
     }
     
-    func save(title: String , date : Date , note : String , amount : Double , accountName :String){
+    func save(title: String , date : Date , note : String , amount : Double , accountName :String , updateAC :Bool)-> Bool {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
+            return false
         }
     
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -117,10 +117,14 @@ class NewIncomeViewController: UIViewController ,UIPickerViewDataSource, UIPicke
         
         do {
             try managedContext.save()
-            updateAccounts()
+            if updateAC {
+                updateAccounts()            }
+            
         } catch let error as NSError {
             print("Could not Save \(error), \(error.userInfo)")
+            return false
         }
+        return true
     }
     
     func updateAccounts(){

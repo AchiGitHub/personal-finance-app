@@ -2,7 +2,7 @@
 //  TransactionsReportViewController.swift
 //  personal-finance-app
 //
-//  Created by Achintha Ikiriwatte on 2021-01-15.
+//  Created by ra on 2021-01-15.
 //
 
 import UIKit
@@ -45,7 +45,7 @@ class TransactionsReportViewController: UIViewController , ChartViewDelegate {
         if incomingArray.count != 0 {
             pieChart.data =  data
         }
-//        pieChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0 )
+        pieChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0 )
         incomingArray.removeAll()
     }
     
